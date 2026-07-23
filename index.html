@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitación - Revelación de Género</title>
+
+  <link rel="stylesheet" href="estilos.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600;700;800&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!--==============================
+        PANTALLA DE BIENVENIDA
+    ==============================-->
+
+    <div id="loader">
+
+        <div class="loader-content">
+
+            <h3>Una hermosa sorpresa está por llegar...</h3>
+
+            <h1>Revelación de Género</h1>
+
+            <p>
+                Nos encantaría que formes parte de este momento tan especial.
+            </p>
+
+            <button id="openInvitation">
+
+                <i class="fa-solid fa-envelope-open"></i>
+
+                Abrir Invitación
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!--==============================
+        CONTENIDO PRINCIPAL
+    ==============================-->
+
+    <div id="contenido">
+
+        <div class="invitation-card">
+
+            <!-- Encabezado superior -->
+            <div class="top-text">
+                <span>ESTAMOS</span>
+                <span class="script">en la dulce</span>
+                <span>ESPERA</span>
+            </div>
+
+            <!-- Título -->
+            <div class="main-title">
+                BOY OR GIRL?
+            </div>
+
+            <!-- Padres -->
+            <div class="hosts">
+                ARIEL & ZAHARA
+            </div>
+
+            <div class="subtitle">
+                Te invitan a descubrir si será niño o niña:
+            </div>
+
+            <div class="question-title">
+                ¿Qué crees que sea?
+            </div>
+
+            <!-- Fecha -->
+            <div class="details-grid">
+
+                <div>
+
+                    <div class="date-day">
+                        DOMINGO
+                    </div>
+
+                    <div class="date-number">
+                        2
+                    </div>
+
+                    <div class="date-month">
+                        AGOSTO
+                    </div>
+
+                </div>
+
+                <div class="location-text">
+
+                    <strong>Lugar del evento</strong>
+
+                    <br>
+
+                    OTB. Nueva Canaán
+
+                    <br>
+
+                    Cochabamba
+
+                </div>
+
+                <div>
+
+                    <div class="time-label">
+                        A LAS
+                    </div>
+
+                    <div class="time-box">
+                        13:00
+                    </div>
+
+                    <div class="time-label">
+                        HRS
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Botones -->
+
+            <div class="buttons-container">
+
+                <a href="https://wa.me/59169522568?text=Hola,%20confirmo%20mi%20asistencia%20para%20la%20revelacion%20de%20genero"
+                    class="btn btn-confirm"
+                    target="_blank">
+
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                    CONFIRMAR ASISTENCIA
+
+                </a>
+
+
+                <a href="https://maps.app.goo.gl/QLsbZtUhhYmLgH1H9"
+                    class="btn btn-location"
+                    target="_blank">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    UBICACIÓN RECEPCIÓN
+
+                </a>
+
+            </div>
+
+            <!-- Audio -->
+
+            <audio id="bg-music" loop preload="auto">
+
+                <source src="bbaudio2.mpeg" type="audio/mpeg">
+
+            </audio>
+
+            <!-- Botón Música -->
+
+            <button id="music-btn" title="Reproducir / Pausar Música">
+
+                <i id="music-icon" class="fa-solid fa-music"></i>
+
+            </button>
+
+            <div class="footer-text">
+
+                ¡Te esperamos!
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!--==============================
+        JAVASCRIPT
+    ==============================-->
+    <script>
+        const loader = document.getElementById("loader");
+        const contenido = document.getElementById("contenido");
+
+        const abrir = document.getElementById("openInvitation");
+
+        const musicBtn = document.getElementById("music-btn");
+        const musicIcon = document.getElementById("music-icon");
+        const bgMusic = document.getElementById("bg-music");
+
+
+
+        // Abrir invitación
+            abrir.addEventListener("click",()=>{
+            loader.style.display="none";
+            contenido.classList.add("visible");
+            bgMusic.play();
+            musicIcon.classList.remove("fa-music");
+            musicIcon.classList.add("fa-pause");
+            musicBtn.classList.add("rotate-music");
+        });
+
+
+
+        // Botón reproducir / pausar
+
+        musicBtn.addEventListener("click", () => {
+
+            if (bgMusic.paused) {
+
+                bgMusic.play();
+
+                musicIcon.classList.remove("fa-music");
+
+                musicIcon.classList.add("fa-pause");
+
+                musicBtn.classList.add("rotate-music");
+
+            } else {
+
+                bgMusic.pause();
+
+                musicIcon.classList.remove("fa-pause");
+
+                musicIcon.classList.add("fa-music");
+
+                musicBtn.classList.remove("rotate-music");
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>

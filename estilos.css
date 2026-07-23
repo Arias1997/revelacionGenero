@@ -1,0 +1,305 @@
+:root {
+      --pink-soft: #f384ab;
+      --blue-soft: #70aaec;
+      --gold: #c59b27;
+      --text-dark: #4a4a4a;
+      --bg-card: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: linear-gradient(135deg, #f38ad9 0%, #7394cc 100%);
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 15px;
+      color: var(--text-dark);
+    }
+
+    #loader{
+        position: fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100vh;
+        background:linear-gradient(135deg,#c057a6,#345896);
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        z-index:99999;
+    }
+
+  .loader-content{
+    width:90%;
+    max-width:500px;
+    text-align:center;
+    color:white;
+    animation: aparecer 1s;
+}
+
+.loader-content h1{
+    font-family:'Great Vibes',cursive;
+    font-size:4rem;
+    margin:15px 0;
+    color:white;
+}
+
+.loader-content h3{
+    font-size:1.6rem;
+}
+
+.loader-content p{
+    margin:20px 0 35px;
+    font-size:1.1rem;
+}
+
+#openInvitation{
+    background:white;
+    color:#d36aa3;
+    border:none;
+    padding:18px 40px;
+    border-radius:50px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#openInvitation:hover{
+    transform:scale(1.08);
+}
+
+#contenido{
+    display:none;
+}
+
+#contenido.visible{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+    /* Contenedor principal estilo tarjeta vertical */
+    .invitation-card {
+      background-image: url('https://i.pinimg.com/736x/9e/0b/89/9e0b892921f34670f27d9ed54b585cef.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+      width: 100%;
+      max-width: 420px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      padding: 30px 20px;
+      text-align: center;
+      position: relative;
+      border: 3px solid #ffffffc5;
+    }
+
+    /* Encabezado */
+    .top-text {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      color: var(--text-dark);
+      text-transform: uppercase;
+      margin-bottom: 160px;
+
+    }
+
+    .top-text span.script {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.6rem;
+      text-transform: none;
+      color: #ee4d80;
+      font-weight: normal;
+      /* text-shadow: 1px 1px 1px black; */
+    }
+
+    /* Ilustración/Ícono Central */
+    .center-illustration {
+      margin: 15px 0;
+      font-size: 3.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .boy-icon { color: var(--blue-soft); }
+    .girl-icon { color: var(--pink-soft); }
+
+    /* Título Gran Impacto */
+    .main-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: var(--gold);
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 0px rgba(255, 251, 0, 0.2);
+    }
+
+    .hosts {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      font-size: 0.9rem;
+      color: #353535;
+      margin-bottom: 15px;
+    }
+
+    .question-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.4rem;
+      background: linear-gradient(90deg, #4e90d6, #df5885);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 15px;
+    }
+
+    /* Cuadrícula de Fecha y Hora */
+    .details-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      padding: 15px 5px;
+      margin: 20px 0;
+    }
+
+    .date-day {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .date-number {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .date-month {
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+
+    .location-text {
+      flex: 1;
+      padding: 0 10px;
+      font-size: 0.75rem;
+      color: #555;
+      border-left: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+    }
+
+    .time-box {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--gold);
+    }
+
+    .time-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #777;
+    }
+
+    /* Botones de Acción */
+    .buttons-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+    }
+
+    .btn-confirm {
+      background-color: var(--pink-soft);
+      color: #ffffff;
+    }
+
+    .btn-location {
+      background-color: var(--blue-soft);
+      color: #ffffff;
+    }
+
+    /* Botón Flotante de Música */
+#music-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--pink-accent, #e87ba0), var(--blue-accent, #5b92e5));
+  color: #ffffff;
+  border: 3px solid #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  z-index: 1000;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#music-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Animación de rotación cuando la música está activa */
+.rotate-music {
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+    .footer-text {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.8rem;
+      color: var(--gold);
+      margin-top: 20px;
+    }
